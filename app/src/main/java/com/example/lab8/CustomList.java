@@ -68,4 +68,8 @@ public class CustomList extends ArrayAdapter<City> {
             throw new Exception("City not found in the list");
         }
     }
+    public int countCities() {
+//            return cities.size();
+        return 0;
+    }
 }
