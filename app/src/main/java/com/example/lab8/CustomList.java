@@ -62,7 +62,10 @@ public class CustomList extends ArrayAdapter<City> {
         }
         return false;
     }
-    public void delete(City city){
-
+    public void delete(City city) throws Exception {
+        boolean removed = cities.remove(city);
+        if (!removed) {
+            throw new Exception("City not found in the list");
+        }
     }
 }
