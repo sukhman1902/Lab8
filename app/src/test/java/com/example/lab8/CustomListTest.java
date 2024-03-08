@@ -2,6 +2,7 @@ package com.example.lab8;
 
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
@@ -41,6 +42,23 @@ public class CustomListTest {
         boolean result = list.hasCity(city);
         assertTrue(result);
     }
+    @Test
+    public void deleteCityTest() {
+        list = MockCityList();
+        City city = new City("Estevan", "SK");
+        City cityNotInList = new City("CityNotInList", "ProvinceNotInList");
+        list.addCity(city);
+        int listSize = list.getCount();
+        try {
+            list.delete(cityNotInList);
+            fail("Expected an exception");
+        } catch (Exception e) {
+            assertEquals("City not found in the list", e.getMessage());
+            assertEquals(list.getCount(), listSize);
+        }
+    }
+
+
 
 
 }

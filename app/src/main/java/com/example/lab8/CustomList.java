@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 
 public class CustomList extends ArrayAdapter<City> {
@@ -52,7 +54,6 @@ public class CustomList extends ArrayAdapter<City> {
     public void addCity(City city){
         cities.add(city);
     }
-
     public boolean hasCity(City city) {
         for (City c : cities) {
             if (c.equals(city)) {
@@ -60,5 +61,8 @@ public class CustomList extends ArrayAdapter<City> {
             }
         }
         return false;
+    }
+    public void delete(City city){
+
     }
 }
